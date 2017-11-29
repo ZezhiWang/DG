@@ -1,6 +1,6 @@
 from math import sqrt
 
-DIMENSION = 255
+DIMENSION = 63
 DEFUALT_EPSILON = 2.0
 
 def __decode_input(line):
