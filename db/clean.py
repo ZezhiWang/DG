@@ -30,7 +30,7 @@ def connect_to_db():
 def clean(db):
   db_name = CONFIG.get('DB', 'Database')
   db.drop_database(db_name)
-  print DB_CLEAN_CONFIRMATION.format(db_name.capitalize())
+  print DB_CLEAN_CONFIRMATION.format(db_name.upper())
 
 def main(argv):
   read_config(argv[1])

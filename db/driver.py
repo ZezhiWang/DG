@@ -39,4 +39,4 @@ class Driver:
     return self.__collection.find({ 'word': catagory })
 
   def find_all(self):
-    return self.__collection.find()
+    return self.__collection.aggregate([{'$sample': {'size': self.__collection.count()}}], allowDiskUse=True)

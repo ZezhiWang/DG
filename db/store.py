@@ -51,11 +51,17 @@ def show_progress(progress):
   sys.stdout.write(line)
   sys.stdout.flush()
 
+def pack(drawing):
+  for i, stroke in enumerate(drawing):
+    drawing[i] = '|'.join(str(a) + '|' + str(b) for a, b in zip(*stroke))
+  return '-'.join(drawing)
+
 def store_object(line, collection):
   obj = json.loads(line.strip())
   obj['_id'] = obj['key_id']
   del obj['timestamp']
   del obj['key_id']
+  obj['drawing'] = pack(obj['drawing'])
   try:
     collection.insert_one(obj)
   except Exception:

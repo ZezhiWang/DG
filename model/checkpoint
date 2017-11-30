@@ -1,0 +1,4 @@
+model_checkpoint_path: "sketch_cnn.model-3000"
+all_model_checkpoint_paths: "sketch_cnn.model-1000"
+all_model_checkpoint_paths: "sketch_cnn.model-2000"
+all_model_checkpoint_paths: "sketch_cnn.model-3000"
